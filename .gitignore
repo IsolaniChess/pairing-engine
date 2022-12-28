@@ -1,2 +1,3 @@
-libchesstourney.so
+*.so
+*.dSYM
 

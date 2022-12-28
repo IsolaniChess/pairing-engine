@@ -1,7 +1,7 @@
 CC=clang
 
 
-CFLAGS=-g
+CFLAGS=-shared -fPIC
 LIBS=
 
 
@@ -9,7 +9,16 @@ SRC=$(wildcard src/**.cpp)
 HEADERS=$(wildcard src/**.h)
 MAINFILE=src/chesstourney.cpp
 
+TARGET=libchesstourney.so
 
-libchesstourney.so: ${SRC} ${HEADERS}
+
+.PHONY: clean
+
+
+${TARGET}: ${SRC} ${HEADERS}
 	${CC} -o $@ ${MAINFILE} ${CFLAGS} ${LIBS}
+
+clean:
+	rm -f ${TARGET}
+	rm -rf ${TARGET}.dSYM
 
