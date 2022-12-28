@@ -7,9 +7,9 @@ LIBS=
 
 SRC=$(wildcard src/**.cpp)
 HEADERS=$(wildcard src/**.h)
-MAINFILE=src/chesstourney.cpp
+MAINFILE=src/isolani.cpp
 
-TARGET=libchesstourney.so
+TARGET=libisolani.so
 
 
 .PHONY: clean
